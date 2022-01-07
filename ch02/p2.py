@@ -87,3 +87,31 @@ c = np.expand_dims(a, axis =0) # 0 = 행늘리기
 print(c)
 print(c.shape)
 
+
+#전치 행렬
+'''
+T 사용해서 전치 행렬을 만들어 줄 수 있다.
+이 기법은 오차역전파 방식으로 학습이 진행될 때 필요하다.
+'''
+arr = np.array([[1,2],[3,4],[5,6]])
+print(arr)
+print(arr.T)
+
+
+#다차원 배열 평탄화
+'''
+flatten()과 ravel()을 가장 많이 사용한다.
+ravel => 부모 배열의 "뷰" 이다. 즉, ravel로 생성한 배열의 요소를 변경하면 부모배열의 요소도 변경된다.
+flatten => 복사본을 형성하여 사용한다.
+'''
+x = np.array([[1,2,3],[4,5,6],[7,8,9]])
+y = x.ravel()
+z = x.flatten()
+print("ravel = ",y)
+print("flatten = ",z)
+y[0] = 8 # ravel 요소 변경
+print(y)
+print(x) #ravel과 부모 배열 모두 요소가 변한다
+z[1] = 9 #flatten 요소 변경
+print(z)
+print(x) #flatten 의 요소만 변하고 부모 배열의 요소는 변하지 않는다.
