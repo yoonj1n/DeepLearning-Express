@@ -82,3 +82,5 @@ print(ar3.dot(ar2))
 # np 배열에 함수를 적용하면 모든 요소에 적용된다.
 b = np.arange(5)
 print(10*np.sin(b))
+
+#ssh test
